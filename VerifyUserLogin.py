@@ -27,7 +27,7 @@ class Verify_Login_And_Saving_Routes(unittest.TestCase):
 
     def setUp(self):
         self.driver = webdriver.Chrome()
-        print '\n' + "Test for Idaho: Verifying login feature" + '\n'
+        print '\n' + "Test for MN: Verifying login feature" + '\n'
         self.driver.get(crcURL)
 
 

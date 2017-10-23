@@ -27,7 +27,7 @@ class Verify_Login_And_Saving_Routes(unittest.TestCase):
 
     def setUp(self):
         self.driver = webdriver.Chrome()
-        print '\n' + "Test for ID: Verifying login and saving routes features" + '\n'
+        print '\n' + "Test for MN: Verifying login and saving routes features" + '\n'
 
 
     def test_login_route_creation_and_deletion(self):

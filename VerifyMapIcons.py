@@ -32,7 +32,7 @@ class Verify_Idaho_Map_Icons(unittest.TestCase):
         self.driver.maximize_window()
 
     def test_road_reports(self):
-        print '\n' + "Verifying: Idaho Map Icons -> Road Reports"
+        print '\n' + "Verifying: MN Map Icons -> Road Reports"
         driver = self.driver
         driver.get('http://idtg.carsprogram.org/events_v1/api/eventMapFeatures?eventClassifications=roadReports')
         tgWebDict = {}
@@ -58,7 +58,7 @@ class Verify_Idaho_Map_Icons(unittest.TestCase):
 
 
     def test_cameras(self):
-        print '\n' + "Verifying: Idaho Map Icons -> Cameras"
+        print '\n' + "Verifying: MN Map Icons -> Cameras"
         driver = self.driver
         driver.get('http://idtg.carsprogram.org:80/cameras_v1/api/cameras?publicOnly=true')
         tgWebList = {}
@@ -83,7 +83,7 @@ class Verify_Idaho_Map_Icons(unittest.TestCase):
                 assert False
 
     def test_signs(self):
-        print '\n' + "Verifying: Idaho Map Icons -> Signs"
+        print '\n' + "Verifying: MN Map Icons -> Signs"
         driver = self.driver
         driver.get('http://idtg.carsprogram.org/signs_v1/api/signs')
         tgWebList = {}
@@ -138,7 +138,7 @@ class Verify_Idaho_Map_Icons(unittest.TestCase):
 
 
     def test_weather_stations(self):
-        print '\n' + "Verifying: Idaho Map Icons -> Weather Stations"
+        print '\n' + "Verifying: MN Map Icons -> Weather Stations"
         driver = self.driver
         driver.get('http://idtg.carsprogram.org:80/rwis_v1/api/stations')
         tgWebList = {}
