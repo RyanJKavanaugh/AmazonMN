@@ -34,7 +34,7 @@ class Verify_Idaho_Map_Icons(unittest.TestCase):
     def test_road_reports(self):
         print '\n' + "Verifying: MN Map Icons -> Road Reports"
         driver = self.driver
-        driver.get('http://idtg.carsprogram.org/events_v1/api/eventMapFeatures?eventClassifications=roadReports')
+        driver.get('http://crc-prod-mn-wf-elb-492694418.us-west-2.elb.amazonaws.com//events_v1/api/eventMapFeatures?eventClassifications=roadReports')
         tgWebDict = {}
 
         data = driver.find_element_by_tag_name('body').text
@@ -46,7 +46,7 @@ class Verify_Idaho_Map_Icons(unittest.TestCase):
             tgWebDict[IDNum] = imageName
 
         for roadReportsNum in tgWebDict:
-            testURL = 'http://crc-prod-id-wf-elb-382957924.us-west-2.elb.amazonaws.com/#roadReports/eventAlbum/' + str(roadReportsNum) + '?timeFrame=TODAY&layers=roadReports%2CwinterDriving%2CweatherWarnings%2CotherStates'
+            testURL = 'http://crc-prod-mn-wf-elb-492694418.us-west-2.elb.amazonaws.com//#roadReports/eventAlbum/' + str(roadReportsNum) + '?timeFrame=TODAY&layers=roadReports%2CwinterDriving%2CweatherWarnings%2CotherStates'
             driver.get(testURL)
 
             try:
@@ -60,7 +60,7 @@ class Verify_Idaho_Map_Icons(unittest.TestCase):
     def test_cameras(self):
         print '\n' + "Verifying: MN Map Icons -> Cameras"
         driver = self.driver
-        driver.get('http://idtg.carsprogram.org:80/cameras_v1/api/cameras?publicOnly=true')
+        driver.get('http://crc-prod-mn-wf-elb-492694418.us-west-2.elb.amazonaws.com//cameras_v1/api/cameras?publicOnly=true')
         tgWebList = {}
         # 1. Grab all of the JSON from the API
         data = driver.find_element_by_tag_name('body').text
@@ -85,7 +85,7 @@ class Verify_Idaho_Map_Icons(unittest.TestCase):
     def test_signs(self):
         print '\n' + "Verifying: MN Map Icons -> Signs"
         driver = self.driver
-        driver.get('http://idtg.carsprogram.org/signs_v1/api/signs')
+        driver.get('http://crc-prod-mn-wf-elb-492694418.us-west-2.elb.amazonaws.com/signs_v1/api/signs')
         tgWebList = {}
 
         data = driver.find_element_by_tag_name('body').text
@@ -97,7 +97,7 @@ class Verify_Idaho_Map_Icons(unittest.TestCase):
             tgWebList[IDNum] = locationName
 
         for signNum in tgWebList:
-            testURL = 'http://crc-prod-id-wf-elb-382957924.us-west-2.elb.amazonaws.com/#signs/albumView/idahosigns*' + str(signNum) + '?timeFrame=TODAY&layers=signs'
+            testURL = 'http://crc-prod-mn-wf-elb-492694418.us-west-2.elb.amazonaws.com/#signs/albumView/idahosigns*' + str(signNum) + '?timeFrame=TODAY&layers=signs'
             driver.get(testURL)
             try:
                 albumViewWait = WebDriverWait(driver, 20).until(EC.presence_of_element_located((By.ID, 'galleryPopup')))
@@ -152,7 +152,7 @@ class Verify_Idaho_Map_Icons(unittest.TestCase):
             tgWebList[IDNum] = locationName
 
         for stationsNum in tgWebList:
-            testURL = 'http://crc-prod-id-wf-elb-382957924.us-west-2.elb.amazonaws.com/#rwis/albumView/' + str(stationsNum) + '?timeFrame=TODAY&layers=rwis'
+            testURL = 'http://crc-prod-mn-wf-elb-492694418.us-west-2.elb.amazonaws.com/#rwis/albumView/' + str(stationsNum) + '?timeFrame=TODAY&layers=rwis'
             driver.get(testURL)
 
             try:
