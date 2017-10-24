@@ -39,7 +39,7 @@ class Verify_Login_And_Saving_Routes(unittest.TestCase):
         driver.find_element_by_id('sign-in-link').click()
         loginElement2 = WebDriverWait(driver, 20).until(EC.presence_of_element_located((By.ID, 'userAccountEmail')))
         driver.find_element_by_id('userAccountEmail').send_keys('ryan.kavanaugh@crc-corp.com')
-        driver.find_element_by_id('userAccountPassword').send_keys('qa12')
+        driver.find_element_by_id('userAccountPassword').send_keys('test')
         driver.find_element_by_id('userAccountPassword').submit()
         time.sleep(4)
 
