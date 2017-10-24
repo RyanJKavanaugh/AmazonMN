@@ -1,6 +1,5 @@
 # coding=utf-8
 from selenium import webdriver
-from selenium import webdriver
 from selenium.common.exceptions import TimeoutException
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
@@ -19,8 +18,8 @@ workbook = xlrd.open_workbook('DataMN.xlsx')
 worksheet = workbook.sheet_by_index(0)
 crcURL = worksheet.cell(1, 0).value
 
-# display = Display(visible=0, size=(800, 800))
-# display.start()
+display = Display(visible=0, size=(800, 800))
+display.start()
 
 class Verify_Idaho_Menu_Options(unittest.TestCase):
 
