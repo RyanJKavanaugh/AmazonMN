@@ -35,7 +35,7 @@ class Verify_Idaho_Menu_Options(unittest.TestCase):
         driver = self.driver
 
         # Login To The System
-        element = WebDriverWait(driver, 20).until(EC.presence_of_element_located((By.ID, 'sign-in-link')))
+        element = WebDriverWait(driver, 30).until(EC.presence_of_element_located((By.ID, 'sign-in-link')))
         driver.find_element_by_id('sign-in-link').click()
         driver.find_element_by_id('userAccountEmail').send_keys('ryan.kavanaugh@crc-corp.com')
         driver.find_element_by_id('userAccountPassword').send_keys('test')
