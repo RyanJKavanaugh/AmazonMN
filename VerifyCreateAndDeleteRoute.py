@@ -54,8 +54,11 @@ class Verify_Login_And_Saving_Routes(unittest.TestCase):
         driver.find_element_by_id('userAccountPassword').submit()
 
     #   HEAD TO THE SEARCH PAGE
+        pageLoadWait = WebDriverWait(driver, 30).until(EC.presence_of_element_located((By.ID, 'searchBtn')))
+        searchButton = driver.find_element_by_id('searchBtn')
+        clickLoadWait = WebDriverWait(driver, 30).until(EC.element_to_be_clickable((By.ID, 'searchBtn')))
         time.sleep(2)
-        driver.find_element_by_id('searchBtn').click()
+        searchButton.click()
 
     #  ENTER LOCATIONS A & B
         time.sleep(2)
