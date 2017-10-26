@@ -42,7 +42,7 @@ class Verify_Idaho_Menu_Options(unittest.TestCase):
         driver.find_element_by_id('userAccountPassword').submit()
 
         # Check that the menu items are all present
-        left_Panel_Wait = WebDriverWait(driver, 20).until(EC.presence_of_element_located((By.XPATH, '//*[@title="Ryan’s Favorites"]')))
+        left_Panel_Wait = WebDriverWait(driver, 30).until(EC.presence_of_element_located((By.XPATH, '//*[@title="Ryan’s Favorites"]')))
         # Personalize your 511
         assert (driver.find_element_by_xpath('//*[@title="Ryan’s Favorites"]').is_displayed()) == True, "Favorites not present"
         # All Reports
