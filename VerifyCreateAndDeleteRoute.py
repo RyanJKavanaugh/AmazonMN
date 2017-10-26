@@ -87,6 +87,7 @@ class Verify_Login_And_Saving_Routes(unittest.TestCase):
 
         driver.find_element_by_xpath('//*[@title="Customize and control Your 511"]').click()
         driver.find_element_by_xpath("//*[contains(text(), 'Delete this route')]").click()
+        time.sleep(2)
         alert = driver.switch_to.alert.accept()
 
         keepRunningLoop = True
