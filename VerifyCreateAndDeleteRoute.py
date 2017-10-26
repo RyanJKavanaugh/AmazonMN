@@ -17,11 +17,15 @@ def AdjustResolution():
     display = Display(visible=0, size=(800, 800))
     display.start()
 
-AdjustResolution()
 
 workbook = xlrd.open_workbook('DataMN.xlsx')
 worksheet = workbook.sheet_by_index(0)
 crcURL = worksheet.cell(1, 0).value
+adjustResolution = worksheet.cell(1, 3).value
+
+if adjustResolution == 1:
+    AdjustResolution()
+
 
 class Verify_Login_And_Saving_Routes(unittest.TestCase):
 
@@ -38,7 +42,8 @@ class Verify_Login_And_Saving_Routes(unittest.TestCase):
         driver.get(crcURL)
 
     #   SELECT THE FAVORITE PAGE
-        time.sleep(4)
+        pageLoadWait = WebDriverWait(driver, 30).until(EC.element_to_be_clickable((By.ID, 'favoriteBtn')))
+        time.sleep(2)
         signInButton = driver.find_element_by_id('favoriteBtn')
         signInButton.click()
 

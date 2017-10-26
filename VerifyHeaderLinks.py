@@ -28,7 +28,6 @@ crcURL = worksheet.cell(1, 0).value
 
 class Verify_Idaho_Links(unittest.TestCase):
 
-
     def test_idaho_tg_web_topbar_links(self):
         strList = []
         httpLinkList = []
