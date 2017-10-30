@@ -71,6 +71,7 @@ class Verify_Login_And_Saving_Routes(unittest.TestCase):
         time.sleep(2)
         driver.find_element_by_id('pickARouteSearchBtn').click()
 
+
     #  SAVE THE LINK
         time.sleep(2)
         driver.find_element_by_xpath('//*[@id="leftPanelContent"]/div/div[3]/a').click() # Clicking the save this link
