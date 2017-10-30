@@ -19,14 +19,23 @@ import xlrd
 from pyvirtualdisplay import Display
 # -*- coding: utf-8 -*-
 
-display = Display(visible=0, size=(800, 800))
-display.start()
 
 workbook = xlrd.open_workbook('DataMN.xlsx')
 worksheet = workbook.sheet_by_index(0)
 crcURL = worksheet.cell(1, 0).value
+adjustResolution = worksheet.cell(1, 3).value
 
-class Verify_Idaho_Links(unittest.TestCase):
+
+def AdjustResolution():
+    display = Display(visible=0, size=(800, 800))
+    display.start()
+
+
+if adjustResolution == 1:
+    AdjustResolution()
+
+
+class Verify_MN_Links(unittest.TestCase):
 
     def test_idaho_tg_web_topbar_links(self):
         strList = []

@@ -17,7 +17,9 @@ from pyvirtualdisplay import Display
 
 workbook = xlrd.open_workbook('DataMN.xlsx')
 worksheet = workbook.sheet_by_index(0)
-crcURL = worksheet.cell(1, 0).value
+url = worksheet.cell(1, 0).value
+username = worksheet.cell(1, 1).value
+password = worksheet.cell(1, 2).value
 adjustResolution = worksheet.cell(1, 3).value
 
 def AdjustResolution():
@@ -32,7 +34,7 @@ class Verify_Login_And_Saving_Routes(unittest.TestCase):
     def setUp(self):
         self.driver = webdriver.Chrome()
         print '\n' + "Test for MN: Verifying login feature" + '\n'
-        self.driver.get(crcURL)
+        self.driver.get(url)
 
 
     def test_login_route_creation_and_deletion(self):
@@ -42,8 +44,8 @@ class Verify_Login_And_Saving_Routes(unittest.TestCase):
         loginElement = WebDriverWait(driver, 20).until(EC.presence_of_element_located((By.ID, 'sign-in-link')))
         driver.find_element_by_id('sign-in-link').click()
         loginElement2 = WebDriverWait(driver, 20).until(EC.presence_of_element_located((By.ID, 'userAccountEmail')))
-        driver.find_element_by_id('userAccountEmail').send_keys('ryan.kavanaugh@crc-corp.com')
-        driver.find_element_by_id('userAccountPassword').send_keys('test')
+        driver.find_element_by_id('userAccountEmail').send_keys(username)
+        driver.find_element_by_id('userAccountPassword').send_keys(password)
         driver.find_element_by_id('userAccountPassword').submit()
         time.sleep(4)
 

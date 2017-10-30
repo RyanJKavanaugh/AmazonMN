@@ -17,11 +17,17 @@ from pyvirtualdisplay import Display
 workbook = xlrd.open_workbook('DataMN.xlsx')
 worksheet = workbook.sheet_by_index(0)
 crcURL = worksheet.cell(1, 0).value
+adjustResolution = worksheet.cell(1, 3).value
 
-display = Display(visible=0, size=(800, 800))
-display.start()
+def AdjustResolution():
+    display = Display(visible=0, size=(800, 800))
+    display.start()
 
-class Verify_Idaho_Menu_Options(unittest.TestCase):
+if adjustResolution == 1:
+    AdjustResolution()
+
+
+class Verify_MN_Menu_Options(unittest.TestCase):
 
     def setUp(self):
         self.driver = webdriver.Chrome()
