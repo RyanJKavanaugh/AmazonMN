@@ -11,6 +11,7 @@ import xlrd
 import time
 import unittest
 import os
+import sys
 from pyvirtualdisplay import Display
 
 # Test verifies the Future Info Toolbar buttons are fully functional
