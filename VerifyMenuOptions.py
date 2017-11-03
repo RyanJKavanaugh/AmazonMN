@@ -33,7 +33,7 @@ class Verify_MN_Menu_Options(unittest.TestCase):
         self.driver = webdriver.Chrome()
        # self.driver.get('http://idwebtg.carsstage.org/#roadReports?timeFrame=TODAY&layers=roadReports%2CwinterDriving%2CweatherWarnings%2CotherStates')
         self.driver.get(crcURL)
-        print ('\n') + "Test Verifying MN TG Web Lefthand Side Menu Options"
+        print ('\n') + "Test Verifying MN TG Web Menu Options"
 
 
     def test_idaho_menu(self):
@@ -74,7 +74,6 @@ class Verify_MN_Menu_Options(unittest.TestCase):
 
 
     def tearDown(self):
-         print '\n' + "Test Completed"
          self.driver.quit()
 
 

@@ -54,7 +54,6 @@ class Verify_Login_And_Saving_Routes(unittest.TestCase):
 
 
     def tearDown(self):
-        print '\n' + "Test Completed"
         self.driver.quit()
 
 
