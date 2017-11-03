@@ -8,6 +8,7 @@ from MNVerifyFDandTextSizes import Verify_Future_Dates_And_Text_Sizes
 from VerifyUserLogin import Verify_Login_And_Saving_Routes
 from VerifyMapLayers import Verify_MN_Layers
 import xlrd
+import sys
 
 workbook = xlrd.open_workbook('DataMN.xlsx')
 worksheet = workbook.sheet_by_index(0)
