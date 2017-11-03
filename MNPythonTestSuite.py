@@ -37,7 +37,9 @@ test_suite = unittest.TestSuite([left_hand_menu, header_links, future_dates_and_
 
 if Jenkins == True:
     # run the suite
-    unittest.TextTestRunner(verbosity=2).run(test_suite)
+    test_runner = unittest.TextTestRunner(resultclass=unittest.TextTestResult)
+    result = test_runner.run(test_suite)
+    sys.exit(not result.wasSuccessful())
 else:
     # open the report file
     outfile = open(dir + "\MNSeleniumPythonTestSummary.html", "w")
